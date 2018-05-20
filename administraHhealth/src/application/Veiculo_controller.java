@@ -18,6 +18,8 @@ public class Veiculo_controller {
 	@FXML ImageView img_add;
 	@FXML ImageView editarVeiculo;
 	@FXML ImageView deletarVeiculo;
+	@FXML ImageView menu_registrar_gasto;
+	@FXML ImageView menu_registrar_veiculos;
 	@FXML TableView tbl_veiculos;
 	@FXML TableColumn coluna_placa;
 	@FXML TableColumn coluna_descricao;
@@ -60,6 +62,15 @@ public class Veiculo_controller {
             tbl_veiculos.getItems().remove(v);
         });
 
+        menu_registrar_gasto.setPickOnBounds(true); // allows click on transparent areas
+        menu_registrar_gasto.setOnMouseClicked((MouseEvent e) -> {
+            Main.abrirTela("ver_gastos", true);
+        });
+
+        menu_registrar_veiculos.setPickOnBounds(true); // allows click on transparent areas
+        menu_registrar_veiculos.setOnMouseClicked((MouseEvent e) -> {
+            Main.abrirTela("ver_veiculos", true);
+        });
 	}
 
 
