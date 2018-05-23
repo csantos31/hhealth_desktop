@@ -1,12 +1,24 @@
 package application;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
 public class Gasto {
 
 	int id;
-	String data;
+	LocalDate data;
 	Float valor;
 	String descricao;
 
+	@Override
+	public String toString(){
+		return getData().toString();
+	}
+
+	public Date toDate(){
+		return Date.from(getData().atStartOfDay(ZoneId.systemDefault()).toInstant());
+	}
 
 	public int getId() {
 		return id;
@@ -14,10 +26,10 @@ public class Gasto {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getData() {
+	public LocalDate getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 	public Float getValor() {
@@ -32,5 +44,4 @@ public class Gasto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
 }

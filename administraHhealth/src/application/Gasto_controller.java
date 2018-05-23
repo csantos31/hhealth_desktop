@@ -1,5 +1,7 @@
 package application;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
@@ -10,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.util.StringConverter;
 
 public class Gasto_controller {
 
@@ -28,7 +31,7 @@ public class Gasto_controller {
 	public void initialize(){
 		dao = new GastoDao();
 
-		coluna_data.setCellValueFactory(new PropertyValueFactory<Gasto, String>("data"));
+		coluna_data.setCellValueFactory(new PropertyValueFactory<Gasto, LocalDate>("data"));
         coluna_descricao.setCellValueFactory(new PropertyValueFactory<Gasto, String>("descricao"));
         coluna_valor.setCellValueFactory(new PropertyValueFactory<Gasto, Float>("valor"));
         ArrayList<Gasto> lst_gasto = dao.obterTodos();

@@ -1,6 +1,10 @@
 package application;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
@@ -20,10 +24,13 @@ public class GastoDao {
 
 			try{
 				PreparedStatement ps = (PreparedStatement) conn.prepareStatement(sql);
-				ps.setString(1, g.getData());
+				String dat = g.getData().toString();
+
+				ps.setDate(1,  java.sql.Date.valueOf(dat));
 				ps.setFloat(2, g.getValor());
 				ps.setString(3, g.getDescricao());
 
+				System.out.println(ps);
 
 				int rowsInserted = ps.executeUpdate();
 				if (rowsInserted > 0) {
@@ -53,11 +60,10 @@ public class GastoDao {
 
 				Gasto g = new Gasto();
 				g.setId(rs.getInt("id_saida_hospital"));
-				g.setData(rs.getString("data"));
+				LocalDate date = rs.getDate("data").toLocalDate();
+				g.setData(date);
 				g.setDescricao(rs.getString("descricao"));
 				g.setValor(rs.getFloat("valor"));
-
-
 				gastos.add(g);
 			}
 
@@ -71,12 +77,12 @@ public class GastoDao {
 	}
 
 	public boolean atualizar(Gasto g){
-
 		String sql = "UPDATE tbl_saida_hospital set data= ?, valor = ?, descricao =? WHERE id_saida_hospital = ?;";
-
 		try{
 			PreparedStatement ps = (PreparedStatement) conn.prepareStatement(sql);
-			ps.setString(1, g.getData());
+			String dat = g.getData().toString();
+
+			ps.setDate(1,  java.sql.Date.valueOf(dat));
 			ps.setFloat(2, g.getValor());
 			ps.setString(3, g.getDescricao());
 			ps.setInt(4, g.getId());
@@ -99,15 +105,11 @@ public class GastoDao {
 	}
 
 	public boolean deletar(Gasto g){
-
 		String sql = "DELETE FROM tbl_saida_hospital WHERE id_saida_hospital = ?;";
-
 		try{
 			PreparedStatement ps = (PreparedStatement) conn.prepareStatement(sql);
 			ps.setInt(1, g.getId());
-
 			int rowsUpdated = ps.executeUpdate();
-
 			if (rowsUpdated > 0) {
 			    System.out.println("Deletado com sucesso");
 			    return true;
