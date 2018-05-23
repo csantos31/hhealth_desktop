@@ -21,7 +21,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		Main.primaryStage = primaryStage;
-		abrirTela("ver_gastos", true);
+		abrirTela("login", false);
 	}
 
 
@@ -29,7 +29,7 @@ public class Main extends Application {
 		Acesso acesso = new AcessoDao().login(txtusuario.getText(),txtsenha.getText());
 		System.out.println(acesso + "here is the access");
 		if(acesso != null){
-			abrirTela("login", false);
+			abrirTela("ver_veiculos", true);
 		}
 
 	}
