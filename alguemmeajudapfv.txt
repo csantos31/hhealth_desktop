@@ -1,0 +1,7 @@
+select de todos os pacientes com consulta marcada para o dia
+
+clicar na consulta e abrir nova página passando o paciente
+
+gerar qurcode e pegar codigo 
+
+mandar pra tela que chama pacientes

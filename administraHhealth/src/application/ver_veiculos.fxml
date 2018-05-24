@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Veiculo_controller">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Veiculo_controller">
    <children>
       <Pane layoutY="166.0" prefHeight="643.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="166.0">
          <children>
@@ -92,12 +97,12 @@
                   <Font name="Times New Roman Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="952.0" layoutY="100.0" prefHeight="31.0" prefWidth="62.0" text="Veículos">
+            <Label layoutX="892.0" layoutY="100.0" prefHeight="31.0" prefWidth="62.0" text="Veículos">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font>
             </Label>
-            <ImageView fx:id="menu_registrar_veiculos" fitHeight="69.0" fitWidth="77.0" layoutX="943.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="menu_registrar_veiculos" fitHeight="69.0" fitWidth="77.0" layoutX="883.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../bin/imagens/ambulance.png" />
                </image>
@@ -109,5 +114,15 @@
             </Label>
          </children>
       </Pane>
+      <Label layoutX="1023.0" layoutY="99.0" prefHeight="31.0" prefWidth="120.0" text="QRCode Consultas">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="menu_registrar_veiculos1" fitHeight="69.0" fitWidth="77.0" layoutX="1045.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagens/agendamento.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

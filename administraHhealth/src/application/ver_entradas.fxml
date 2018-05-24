@@ -1,8 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Entrada_controller">
+   <children>
+      <Pane layoutX="-5.0" prefHeight="166.0" prefWidth="1216.0" style="-fx-border-color: #333;" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="159.0" fitWidth="170.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagens/logo_only_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="menu_registrar_gasto" fitHeight="69.0" fitWidth="77.0" layoutX="486.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagens/256x256bb.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="471.0" layoutY="100.0" prefHeight="31.0" prefWidth="98.0" text="Registrar Gasto">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="607.0" layoutY="100.0" prefHeight="31.0" prefWidth="120.0" text="Registrar Entrada">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="menu_registrar_entrada" fitHeight="69.0" fitWidth="77.0" layoutX="628.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagens/ganho.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="menu_registrar_resumo" fitHeight="69.0" fitWidth="77.0" layoutX="762.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagens/bt.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="771.0" layoutY="100.0" prefHeight="31.0" prefWidth="62.0" text="Resumo">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="901.0" layoutY="100.0" prefHeight="31.0" prefWidth="62.0" text="Veículos">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="menu_registrar_veiculos" fitHeight="69.0" fitWidth="77.0" layoutX="892.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagens/ambulance.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="216.0" layoutY="89.0" prefHeight="17.0" prefWidth="170.0" text="HHealth" textFill="#ab0a0a">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="menu_registrar_veiculos1" fitHeight="69.0" fitWidth="77.0" layoutX="1040.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/agendamento.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="1018.0" layoutY="99.0" prefHeight="31.0" prefWidth="120.0" text="QRCode Consultas">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="475.0" layoutY="197.0" prefHeight="53.0" prefWidth="308.0" text="Todas as Entradas" textFill="#24242460">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Pane layoutX="-8.0" layoutY="166.0" prefHeight="650.0" prefWidth="1211.0">
+         <children>
+            <ImageView fx:id="img_add" fitHeight="40.0" fitWidth="46.0" layoutX="846.0" layoutY="26.0">
+               <image>
+                  <Image url="@../../bin/imagens/add.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="906.0" layoutY="40.0" prefHeight="31.0" prefWidth="98.0" text="Inserir Entrada">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="editarEntrada" fitHeight="23.0" fitWidth="25.0" layoutX="1037.0" layoutY="14.0">
+               <image>
+                  <Image url="@../imagens/edit.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="1030.0" layoutY="40.0" prefHeight="31.0" prefWidth="52.0" text="Editar">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="deletarEntrada" fitHeight="23.0" fitWidth="25.0" layoutX="1095.0" layoutY="14.0">
+               <image>
+                  <Image url="@../imagens/del.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="1087.0" layoutY="41.0" prefHeight="31.0" prefWidth="62.0" text="Excluir">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tbl_entradas" layoutX="11.0" layoutY="90.0" prefHeight="558.0" prefWidth="1196.0">
+               <columns>
+                  <TableColumn fx:id="coluna_data" prefWidth="237.6666717529297" resizable="false" text="Data" />
+                  <TableColumn fx:id="coluna_descricao" minWidth="0.0" prefWidth="617.3333282470703" resizable="false" text="Descrição" />
+                  <TableColumn fx:id="coluna_valor" prefWidth="345.33331298828125" text="Valor" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
-

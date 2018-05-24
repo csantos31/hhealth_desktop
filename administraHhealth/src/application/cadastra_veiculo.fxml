@@ -32,7 +32,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutY="65.0" prefHeight="436.0" prefWidth="500.0">
+      <Pane layoutY="65.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="436.0" prefWidth="500.0">
          <children>
             <Label layoutX="14.0" layoutY="29.0" prefHeight="65.0" prefWidth="206.0" text="Unidade a qual o veículo pertende" wrapText="true">
                <font>

@@ -19,6 +19,7 @@ public class Gasto_controller {
 	@FXML ImageView img_add;
 	@FXML ImageView menu_registrar_gasto;
 	@FXML ImageView menu_registrar_veiculos;
+	@FXML ImageView menu_registrar_entrada;
 	@FXML ImageView editarGasto;
 	@FXML ImageView deletarGasto;
 	@FXML TableView tbl_gastos;
@@ -73,6 +74,11 @@ public class Gasto_controller {
         menu_registrar_veiculos.setPickOnBounds(true); // allows click on transparent areas
         menu_registrar_veiculos.setOnMouseClicked((MouseEvent e) -> {
             Main.abrirTela("ver_veiculos", true);
+        });
+
+        menu_registrar_entrada.setPickOnBounds(true); // allows click on transparent areas
+        menu_registrar_entrada.setOnMouseClicked((MouseEvent e) -> {
+            Main.abrirTela("ver_entradas", true);
         });
 
 	}
