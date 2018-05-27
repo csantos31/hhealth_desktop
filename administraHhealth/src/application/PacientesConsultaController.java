@@ -34,6 +34,6 @@ public class PacientesConsultaController {
 	}
 
 	public void buscar(){
-
+		
 	}
 }
