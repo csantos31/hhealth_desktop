@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PacientesConsultaController">
+   <children>
+      <TableView fx:id="tblpacientes" layoutX="20.0" layoutY="92.0" prefHeight="390.0" prefWidth="516.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="92.0">
+        <columns>
+          <TableColumn fx:id="colnome" editable="false" prefWidth="398.0" resizable="false" sortable="false" text="Nome" />
+          <TableColumn fx:id="colhora" editable="false" minWidth="0.0" prefWidth="117.0" resizable="false" sortable="false" text="Hora" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="gerarqrcode" fitHeight="112.0" fitWidth="163.0" layoutX="548.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="268.0">
+         <image>
+            <Image url="@../../../../../Desktop/107072.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="551.0" layoutY="289.0" prefHeight="71.0" prefWidth="106.0" style="-fx-background-color: #FFFFFF;" text="GERAR QRCode de Atendimento" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="289.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="retornarapp" fitHeight="71.0" fitWidth="98.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Desktop/arrow_back_grey_192x192.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="98.0" layoutY="14.0" prefHeight="71.0" prefWidth="85.0" text="Retornar ao menu" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtbusca" layoutX="307.0" layoutY="38.0" promptText="Buscar" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="38.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button layoutX="486.0" layoutY="40.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="40.0" />
+   </children>
+</AnchorPane>

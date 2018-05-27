@@ -18,6 +18,7 @@ public class Entrada_controller {
 	@FXML ImageView menu_registrar_gasto;
 	@FXML ImageView menu_registrar_veiculos;
 	@FXML ImageView menu_registrar_entrada;
+	@FXML ImageView menu_registrar_resumo;
 	@FXML ImageView editarEntrada;
 	@FXML ImageView deletarEntrada;
 	@FXML TableView tbl_entradas;
@@ -77,6 +78,11 @@ public class Entrada_controller {
         menu_registrar_entrada.setPickOnBounds(true); // allows click on transparent areas
         menu_registrar_entrada.setOnMouseClicked((MouseEvent e) -> {
             Main.abrirTela("ver_veiculos", true);
+        });
+
+        menu_registrar_resumo.setPickOnBounds(true); // allows click on transparent areas
+        menu_registrar_resumo.setOnMouseClicked((MouseEvent e) -> {
+            Main.abrirTela("chart_resumo", true);
         });
 
 	}

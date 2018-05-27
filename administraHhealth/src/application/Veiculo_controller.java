@@ -21,6 +21,8 @@ public class Veiculo_controller {
 	@FXML ImageView menu_registrar_gasto;
 	@FXML ImageView menu_registrar_veiculos;
 	@FXML ImageView menu_registrar_entrada;
+	@FXML ImageView menu_registrar_resumo;
+	@FXML ImageView menu_pacientes;
 	@FXML TableView tbl_veiculos;
 	@FXML TableColumn coluna_placa;
 	@FXML TableColumn coluna_descricao;
@@ -76,6 +78,16 @@ public class Veiculo_controller {
         menu_registrar_entrada.setPickOnBounds(true); // allows click on transparent areas
         menu_registrar_entrada.setOnMouseClicked((MouseEvent e) -> {
             Main.abrirTela("ver_entradas", true);
+        });
+
+        menu_registrar_resumo.setPickOnBounds(true); // allows click on transparent areas
+        menu_registrar_resumo.setOnMouseClicked((MouseEvent e) -> {
+            Main.abrirTela("chart_resumo", true);
+        });
+
+        menu_pacientes.setPickOnBounds(true); // allows click on transparent areas
+        menu_pacientes.setOnMouseClicked((MouseEvent e) -> {
+            Main.abrirTela("pacientes_com_consulta", true);
         });
 	}
 

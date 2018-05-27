@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Entrada_controller">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Chart_controller">
    <children>
-      <Pane layoutX="-5.0" prefHeight="166.0" prefWidth="1216.0" style="-fx-border-color: #333;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <LineChart fx:id="lineChart" layoutY="185.0" prefHeight="394.0" prefWidth="1221.0" title="Estatíscas de entradas e saídas financeiras" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="185.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Pane layoutX="-5.0" prefHeight="176.0" prefWidth="1226.0" style="-fx-border-color: #333;">
          <children>
             <ImageView fitHeight="159.0" fitWidth="170.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,52 +78,6 @@
                </image>
             </ImageView>
             <Label layoutX="1018.0" layoutY="99.0" prefHeight="31.0" prefWidth="120.0" text="QRCode Consultas">
-               <font>
-                  <Font name="Times New Roman Bold" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Label layoutX="475.0" layoutY="197.0" prefHeight="53.0" prefWidth="308.0" text="Todas as Entradas" textFill="#24242460">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tbl_entradas" layoutX="20.0" layoutY="294.0" prefHeight="652.0" prefWidth="1174.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="294.0">
-         <columns>
-            <TableColumn fx:id="coluna_data" prefWidth="237.6666717529297" resizable="false" text="Data" />
-            <TableColumn fx:id="coluna_descricao" minWidth="0.0" prefWidth="617.3333282470703" resizable="false" text="Descrição" />
-            <TableColumn fx:id="coluna_valor" prefWidth="345.33331298828125" text="Valor" />
-         </columns>
-      </TableView>
-      <Pane layoutX="2.0" layoutY="170.0" prefHeight="800.0" prefWidth="1224.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="170.0">
-         <children>
-            <ImageView fx:id="img_add" fitHeight="40.0" fitWidth="46.0" layoutX="846.0" layoutY="26.0">
-               <image>
-                  <Image url="@../../bin/imagens/add.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="906.0" layoutY="40.0" prefHeight="31.0" prefWidth="98.0" text="Inserir Entrada">
-               <font>
-                  <Font name="Times New Roman Bold" size="14.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="editarEntrada" fitHeight="23.0" fitWidth="25.0" layoutX="1037.0" layoutY="14.0">
-               <image>
-                  <Image url="@../imagens/edit.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="1030.0" layoutY="40.0" prefHeight="31.0" prefWidth="52.0" text="Editar">
-               <font>
-                  <Font name="Times New Roman Bold" size="14.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="deletarEntrada" fitHeight="23.0" fitWidth="25.0" layoutX="1095.0" layoutY="14.0">
-               <image>
-                  <Image url="@../imagens/del.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="1087.0" layoutY="41.0" prefHeight="31.0" prefWidth="62.0" text="Excluir">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font>
