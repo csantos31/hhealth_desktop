@@ -35,7 +35,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		Main.primaryStage = primaryStage;
-		abrirTela("pacientes_com_consulta", false);
+		abrirTela("login", false);
 	}
 
 	@FXML public void logar(){

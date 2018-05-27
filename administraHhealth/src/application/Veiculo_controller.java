@@ -87,7 +87,8 @@ public class Veiculo_controller {
 
         menu_pacientes.setPickOnBounds(true); // allows click on transparent areas
         menu_pacientes.setOnMouseClicked((MouseEvent e) -> {
-            Main.abrirTela("pacientes_com_consulta", true);
+        	PacientesConsultaController controller = new PacientesConsultaController();
+            Main.abrirTela("pacientes_com_consulta", true, controller);
         });
 	}
 

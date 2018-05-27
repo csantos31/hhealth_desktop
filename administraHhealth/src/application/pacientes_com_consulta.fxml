@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PacientesConsultaController">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TableView fx:id="tblpacientes" layoutX="20.0" layoutY="92.0" prefHeight="390.0" prefWidth="516.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="92.0">
         <columns>
-          <TableColumn fx:id="colnome" editable="false" prefWidth="398.0" resizable="false" sortable="false" text="Nome" />
-          <TableColumn fx:id="colhora" editable="false" minWidth="0.0" prefWidth="117.0" resizable="false" sortable="false" text="Hora" />
+          <TableColumn fx:id="colnome" editable="false" prefWidth="378.0" resizable="false" sortable="false" text="Nome" />
+          <TableColumn fx:id="colhora" editable="false" minWidth="0.0" prefWidth="137.0" resizable="false" sortable="false" text="Hora" />
         </columns>
       </TableView>
       <ImageView fitHeight="112.0" fitWidth="163.0" layoutX="548.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="268.0">
@@ -44,5 +44,10 @@
          </font>
       </TextField>
       <Button layoutX="486.0" layoutY="40.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="40.0" />
+      <Label fx:id="senhaemergencia" layoutX="551.0" layoutY="151.0" prefHeight="71.0" prefWidth="106.0" text="Senha de emergência" textFill="#e10909" wrapText="true" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
