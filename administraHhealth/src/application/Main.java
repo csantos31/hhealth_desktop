@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.Date;
@@ -23,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
 
 
 public class Main extends Application {
@@ -31,10 +33,10 @@ public class Main extends Application {
 	@FXML TextField txtusuario;
 	@FXML TextField txtsenha;
 
-
 	@Override
 	public void start(Stage primaryStage) {
 		Main.primaryStage = primaryStage;
+		primaryStage.getIcons().add(new Image("imagens/logo_only_heart.png"));
 		abrirTela("login", false);
 	}
 
