@@ -11,6 +11,9 @@ public class Paciente {
 	private Time hora;
 	private LocalDate data;
 
+	public String fromString(){
+		return getCodigo();
+	}
 
 	public String getCodigo() {
 		return codigo;

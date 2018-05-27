@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import javax.swing.JOptionPane;
+
 import org.magiclen.magicqrcode.QRCodeEncoder;
 
 import javafx.application.Application;
@@ -32,51 +34,8 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		//Main.primaryStage = primaryStage;
-		//abrirTela("login", false);
-
-		QRCodeEncoder qr = new QRCodeEncoder("4574");
-		Canvas canvas = new Canvas(300, 250);
-        GraphicsContext gc = canvas.getGraphicsContext2D();
-        boolean[][] qrData = qr.encode();
-
-        Group root = new Group();
-
-		drawQRCode(canvas, qrData);
-
-		root.getChildren().add(canvas);
-		primaryStage.setScene(new Scene(root));
-		primaryStage.show();
-
-	}
-
-	public static void drawQRCode(final Canvas canvas, final boolean[][] qrData) {
-		final int width = (int)canvas.getWidth();
-		final int height = (int)canvas.getHeight();
-		final GraphicsContext gc = canvas.getGraphicsContext2D();
-
-		// Draw the background(white)
-		gc.setFill(Color.WHITE);
-		gc.fillRect(0, 0, width, height);
-
-		final int imageSize = Math.min(width, height);
-		final int length = qrData.length;
-		final int size = imageSize / length;
-		final int actualImageSize = size * length;
-		final int offsetImageX = (width - actualImageSize) / 2;
-		final int offsetImageY = (height - actualImageSize) / 2;
-
-		// Draw the data(true is black)
-		gc.setFill(Color.BLACK);
-		for (int i = 0; i < length; i++) {
-			for (int j = 0; j < length; j++) {
-				if (qrData[i][j]) {
-					final int x = i * size + offsetImageX;
-					final int y = j * size + offsetImageY;
-					gc.fillRect(x, y, size, size);
-				}
-			}
-		}
+		Main.primaryStage = primaryStage;
+		abrirTela("pacientes_com_consulta", false);
 	}
 
 	@FXML public void logar(){
@@ -84,6 +43,8 @@ public class Main extends Application {
 		System.out.println(acesso + "here is the access");
 		if(acesso != null){
 			abrirTela("ver_veiculos", true);
+		}else{
+			JOptionPane.showMessageDialog(null, "Usuário não encontrado", "Erro ao logar", JOptionPane.ERROR_MESSAGE);
 		}
 
 	}
